@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Middventory · Middla Lab inventory</title>
+  <meta name="description" content="Everything in Middla Lab, and which drawer it lives in.">
+  <meta name="theme-color" content="#FAFAFD">
+  <meta property="og:title" content="Middventory">
+  <meta property="og:description" content="Everything in Middla Lab, and which drawer it lives in.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/silkscreen-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/pixelify-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="logo">
+      <span class="gem" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span><b>MIDDVENTORY</b><small>EVERYTHING IN MIDDLA LAB</small></span>
+    </header>
+
+    <main class="win" aria-label="Middla Lab inventory">
+      <div class="tabs" role="tablist" id="tabs"></div>
+      <div class="find">
+        <label for="q">FIND</label>
+        <input id="q" type="search" autocomplete="off" placeholder="servo, LED, solder…">
+        <button class="clr" data-act="clearq" id="clr" hidden aria-label="Clear search">✕</button>
+      </div>
+      <p class="msg" id="msg" aria-live="polite"></p>
+      <div class="gridwrap">
+        <div class="grid" id="grid" role="group" aria-label="Parts"></div>
+        <div class="sbar" id="sbar" aria-hidden="true"><i></i></div>
+      </div>
+      <div class="ifoot"><span class="ico" aria-hidden="true">✦</span><div class="field" id="partcount"></div><b>PARTS</b></div>
+      <div class="legend">
+        <span><i style="background:repeating-linear-gradient(135deg,#D8E9EE 0 4px,#9AA6C2 4px 6px)"></i>All borrowed</span>
+        <span><i style="background:var(--red)"></i>Something broken</span>
+        <span><i style="background:var(--yellow)"></i>Running low</span>
+      </div>
+    </main>
+  </div>
+
+  <div id="tip" hidden role="tooltip"></div>
+
+  <noscript><p style="text-align:center;padding:20px">Middventory needs JavaScript to show the parts.</p></noscript>
+
+  <script src="js/art.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
